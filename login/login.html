@@ -1,0 +1,88 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <center><h2 class="title">Sign In</h2></center>
+            <label for="username">User Name:</label>
+            <input type="username" placeholder="Enter your username: " autofocus="true" />
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter your password: " autofocus="true" />
+            <input type="checkbox" id="showPasswordCheckbox">
+            <label for="showPasswordCheckbox" class="show-password-label">Show Password</label><br>
+            <input type="submit" value="SIGN IN" class="btn" />
+            <a href="/">Forgot Password?</a>
+            <label for="submit">New User:</label>
+            <input type="button" value="SIGN UP" class="btn" id="openSignUpPopup" />
+        </form>
+    </div>
+ 
+    <div id="modalSignUp" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <center><h2 class="title">Sign Up</h2></center><br>
+            <form id="signupForm">
+                <label for="signupUsername">Username: </label><br>
+                <input type="text" id="signupUsername" name="signupUsername"><br>
+                <label for="signupPassword">Password:</label><br>
+                <input type="text" id="signupPassword" name="signupPassword"><br>
+                <label for="salary">Salary: </label><br>
+                <input type="text" id="salary" name="salary" placeholder="R$ 0,00" onkeypress="return onlyNumberKey(event)"><br><br>
+                <input type="submit" value="Sign Up" class="btn-main selectable" id="openSignUpPopup" />
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var openSignUpPopup = document.getElementById("openSignUpPopup");
+        var modalSignUp = document.getElementById("modalSignUp");
+        var closeSignUpPopup = document.getElementsByClassName("close")[0];
+        var signupForm = document.getElementById("signupForm");
+
+        openSignUpPopup.onclick = function() {
+            modalSignUp.style.display = "block";
+        }
+
+        closeSignUpPopup.onclick = function() {
+            modalSignUp.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modalSignUp) {
+                modalSignUp.style.display = "none";
+            }
+        }
+
+        signupForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var signupUsername = document.getElementById("signupUsername").value;
+            var signupPassword = document.getElementById("signupPassword").value;
+            var salary = document.getElementById("salary").value;
+            alert("Cadastro\nUsername: " + signupUsername + "\nPassword: " + signupPassword + "\nSalary: " + salary);
+        });
+
+        function onlyNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        document.getElementById("salary").addEventListener('input', function (e) {
+            var salaryField = e.target;
+            var salaryValue = salaryField.value.replace(/\D/g, '');
+            salaryValue = (salaryValue/100).toFixed(2);
+            salaryField.value = 'R$ ' + salaryValue.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        });
+    </script>
+
+</body>
+</html>
+
+retirar a opção de ocultar a password da opção Sign Up

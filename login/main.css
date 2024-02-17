@@ -7,6 +7,11 @@ body {
     color: #023047
 }
 
+.title {
+    border-bottom: 2px solid #41b6c8;
+    padding-bottom: 5px;
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -99,24 +104,24 @@ body {
 
 .modal {
     display: none;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
 }
 
 .modal-content {
-    background-color: #41b6c8;
-    border-radius: 7px;
-    padding: 40px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    width: 80%; /* Largura */
-    max-width: 600px; /* Largura máxima */
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    text-align: center;
+    border-radius: 5%;
 }
 
 .modal-content h2 {
@@ -157,8 +162,37 @@ body {
     margin: 0 !important;
 }
 
-.modal-content .btn:hover {
+.modal-content .btn-main:hover {
     transform: scale(1.05);
     background-color: #41b6c8;
+    color: #fff;
+    
 }
 
+span{
+    cursor: pointer;
+}
+
+.selectable {
+    cursor: pointer;
+}
+
+.show-password-label {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#showPasswordCheckbox {
+    display: none;
+}
+
+#showPasswordCheckbox + .show-password-label::before {
+    content: '\1F441';
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#showPasswordCheckbox:checked + .show-password-label::before {
+    content: '\1F443';
+}
