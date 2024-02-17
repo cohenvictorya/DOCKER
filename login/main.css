@@ -4,9 +4,9 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #000000
-    
+    color: #023047
 }
+
 .page {
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@ body {
     height: 100vh;
     background-color: #ffffff;
 }
+
 .formLogin {
     display: flex;
     flex-direction: column;
@@ -25,12 +26,12 @@ body {
     padding: 40px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
     gap: 5px
-    border 2xp rgb(127, 207, 227)
 }
 
 .areaLogin img {
     width: 420px;
 }
+
 .formLogin h1 {
     padding: 0;
     margin: 0;
@@ -44,6 +45,7 @@ body {
     color: #666;
     margin-bottom: 25px;
 }
+
 .formLogin input {
     padding: 15px;
     font-size: 14px;
@@ -57,8 +59,9 @@ body {
 
 
 .formLogin input:focus {
-    border: 1px solid #236475;
+    border: 1px solid #41b6c8;
 }
+
 .formLogin label {
     font-size: 14px;
     font-weight: 600;
@@ -71,13 +74,14 @@ body {
     color: #555;
     transition: all linear 160ms;
 }
+
 .formLogin a:hover {
-    color: #236475;
+    color: #41b6c8;
 }
 
 .btn {
-    background-color: #236475;
-    color: #ffffff;
+    background-color: #41b6c8;
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
     border: none !important;
@@ -89,6 +93,72 @@ body {
 
 .btn:hover {
     transform: scale(1.05);
-    background-color: #236475;
+    background-color: #41b6c8;
 
 }
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #41b6c8;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    width: 80%; /* Largura */
+    max-width: 600px; /* Largura máxima */
+}
+
+.modal-content h2 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.modal-content label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.modal-content input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+.modal-content input:focus {
+    border: 1px solid #41b6c8;
+}
+
+.modal-content .btn {
+    background-color: #41b6c8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.modal-content .btn:hover {
+    transform: scale(1.05);
+    background-color: #41b6c8;
+}
+
